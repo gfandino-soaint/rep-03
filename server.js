@@ -1,12 +1,46 @@
 
-//requerimos el uso de hapi
-const Hapi = require('hapi');
-// creamos nuestro servidor en el puerto 3000
-const server = Hapi.server({
-    port: 3000
+//
+
+const express = require('express');
+//const path = require('path');
+//const bodyParser = require('body-parser');
+
+const port = 8080
+
+const app = express();
+
+
+
+app.get('/alive', (req, res) => {
+  console.log('ejecutando /alive');
+  res.send( { mensaje: 'Servicio Activo'});
 });
 
-server.route({
+
+
+/*app.post('/hero/**', (req, res) => {
+  const heroId = parseInt(req.params[0]);
+  const foundHero = heroes.find(subject => subject.id === heroId);
+
+  if (foundHero) {
+      for (let attribute in foundHero) {
+          if (req.body[attribute]) {
+              foundHero[attribute] = req.body[attribute];
+              console.log(`Set ${attribute} to ${req.body[attribute]} in hero: ${heroId}`);
+          }
+      }
+      res.status(202).header({Location: `http://localhost:${port}/hero/${foundHero.id}`}).send(foundHero);
+  } else {
+      console.log(`Hero not found.`);
+      res.status(404).send();
+  }
+});*/
+
+
+console.log(`Servicio arriba en ${port}`);
+app.listen(port);
+
+/*server.route({
     method: 'GET',
     path: '/alive',
     handler: (request, h) => {
@@ -74,4 +108,4 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
 });
 //Inicio del servicio.
-init();
+init();*/
