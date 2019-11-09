@@ -16,7 +16,60 @@ app.get('/alive', (req, res) => {
   res.send( { mensaje: 'Servicio Activo'});
 });
 
+app.get('/saludo/:nombre', (req, res) => {
+    console.log('ejecutando /saludo');
+    res.send( { saludo: 'Hola '+req.params.nombre});
+});
 
+
+
+app.get('/add/:a/:b', (req, res) => {
+    console.log('ejecutando /suma');
+    const aa = parseInt(req.params.a);
+    const bb = parseInt(req.params.b);
+    respuesta = {
+        error: false,
+        mensaje: 'Operacion realizada',
+        respuesta: aa+bb
+    };
+    res.send(respuesta);
+});
+
+app.get('/sub/:a/:b', (req, res) => {
+    console.log('ejecutando /suma');
+    const aa = parseInt(req.params.a);
+    const bb = parseInt(req.params.b);
+    respuesta = {
+        error: false,
+        mensaje: 'Operacion realizada',
+        respuesta: aa-bb
+    };
+    res.send(respuesta);
+});
+
+app.get('/mult/:a/:b', (req, res) => {
+    console.log('ejecutando /suma');
+    const aa = parseInt(req.params.a);
+    const bb = parseInt(req.params.b);
+    respuesta = {
+        error: false,
+        mensaje: 'Operacion realizada',
+        respuesta: aa*bb
+    };
+    res.send(respuesta);
+});
+
+app.get('/div/:a/:b', (req, res) => {
+    console.log('ejecutando /suma');
+    const aa = parseInt(req.params.a);
+    const bb = parseInt(req.params.b);
+    respuesta = {
+        error: false,
+        mensaje: 'Operacion realizada',
+        respuesta: aa/bb
+    };
+    res.send(respuesta);
+});
 
 /*app.post('/hero/**', (req, res) => {
   const heroId = parseInt(req.params[0]);
