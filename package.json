@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "hapi": "^18.1.0"
+  },
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "hapi": "^18.1.0"
-  }
+  "author": "gfandino@soaint.com",
+  "license": "ISC"
 }
