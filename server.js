@@ -63,7 +63,6 @@ server.route({
     }
 })
 
-
 //Creamos el metodo de inicio.
 const init = async () => {
     await server.start();
